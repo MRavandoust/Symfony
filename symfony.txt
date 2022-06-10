@@ -1,0 +1,93 @@
+SYMFONY
+
+- Installer le serveur en fonction de votre système d'exploitation
+	MAC => MAMP
+    WINDOWS => XAMPP ou WAMP
+    
+ - Version de PHP, recommandation 7.4 (à savoir pour Symfony, minimum 7.2)
+   ligne de commande pour connaître la version php :   php -v
+ 
+ - Installer Git : https://git-scm.com/   (non obligatoire)
+ 
+ - Installer Composer : https://getcomposer.org/download/   (obligatoire)
+ 	composer -v
+    
+    
+  
+  
+----------------------------------------------------------
+pour mac :
+
+touch ~/.zshrc                       ==> créer le fichier 
+
+ 
+open -a TextEdit ~/.zshrc             ==> l'ouvrir
+
+//---- dans le fichier ------------------------------
+
+
+export PATH=/Applications/MAMP/bin/php/php8.0.8/bin:
+source ~/.bash_profile
+----------------------------------------------------------
+ligne de commande
+flèches haut bas : retourner ou revenir sur les ligne de cmd
+flèches gauche droite : se positionner dans la ligne de cmd
+
+le terme cd : command directory permet de rentrer dans des dossiers (arborescence de dossiers)
+
+--------------------------------------------------------
+INSTALLATION D'UN PROJET SYMFONY
+
+
+-- installation de la dernière version de Symfony
+composer create-project symfony/website-skeleton nomDuProjet
+
+-- installation d'une version précise de Symfony
+composer create-project symfony/website-skeleton:"^5.4" nomDuProjet
+----------------------------------------------------------
+code . permet d'ouvrir le projet sur VSC
+---------------------------------------------------------
+Extensions VSC 
+
+	- php intelephense
+
+	- php namespace resolver
+
+	- DotENV
+
+	- Twig language 2
+    	aller sur Settings (CTRL + ,)
+        écrire "emmet"
+        chercher Emmet : Include languages
+        Dans le tableau : add item
+        	key => twig
+        	value => html
+-----------------------------------------------------------
+Allumer le serveur :
+
+php -S 127.0.0.1:8000 -t public
+
+Eteindre : CTRL + C
+
+ !!!! si le serveur n'est pas allumé : Ce site est inaccessible
+ -----------------------------------------------------------
+ ligne de cmd :
+ 
+ toutes les lignes de commande commençent par php bin/console
+ 
+ php bin/console ==> lexique
+ 
+ 
+ pour créer la bdd (configurée dans le fichier .env)
+ 
+ php bin/console doctrine:database:create
+
+--------------------------------------------------
+   /**
+     * toutes les versions de PHP
+     * 
+     * @Route("route", name="nomDeLaRoute")
+     */
+
+     // uniquement PHP 8
+     #[Route('route', name:'nomDeLaRoute')]
